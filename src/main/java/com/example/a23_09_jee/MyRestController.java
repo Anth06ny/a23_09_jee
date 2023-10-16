@@ -84,7 +84,6 @@ public class MyRestController {
 
     }
 
-
     //http://localhost:8080/increment
     //Json Attendu : {"name": "toto", "note": 12}
     @PostMapping("/increment")
@@ -92,7 +91,7 @@ public class MyRestController {
         System.out.println("/increment : " + student.getName() + " : " + student.getNote());
 
         //traitement, mettre en base…
-        student.setNote(student.getNote() +1);
+        student.setNote(student.getNote() + 1);
         student.increment();
         //Retourner d'autres données
         return student;
