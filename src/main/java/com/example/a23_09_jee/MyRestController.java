@@ -1,9 +1,12 @@
 package com.example.a23_09_jee;
 
 import com.example.a23_09_jee.beans.StudentBean;
+import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.net.http.HttpResponse;
+
+@RestController   //Une API Rest qui retourne du JSON
 public class MyRestController {
 
     /* -------------------------------- */
