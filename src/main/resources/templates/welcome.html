@@ -6,10 +6,11 @@
     <link href="/css/main.css" rel="stylesheet"/>
 </head>
 <body>
-      <h1 th:text="${texte} + ' ' + ${studentBean.name}"></h1>
+<h1 th:style="'color:' + ${ studentBean.name == null ? 'rosybrown' : 'brown' }"
+    th:text="${texte} + ' ' + ${studentBean.name}"></h1>
 
-      <ol>
-          <li th:each="student : ${studentList}" th:text="${student.name} + ':' + ${student.note}"> </li>
-      </ol>
+<ol>
+    <li th:each="student : ${studentList}" th:text="${student.name} + ':' + ${student.note}"></li>
+</ol>
 </body>
 </html>
