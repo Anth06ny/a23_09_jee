@@ -18,6 +18,15 @@ public class MyRestController {
         return "helloWorld";
     }
 
+
+    //http://localhost:8080/boulangerie?nbCroissant=5&nbSandwich=4
+    @GetMapping("/boulangerie")
+    public double boulangereie( @RequestParam(defaultValue = "0")int nbCroissant , @RequestParam(defaultValue = "0") int nbSandwich){
+        System.out.println("/boulangerie nbCroissant=" + nbCroissant + " nbSandwich=" + nbSandwich);
+
+        return nbCroissant * 0.95 + nbSandwich* 4;
+    }
+
     //http://localhost:8080/getStudent
     @GetMapping("/getStudent")
     public StudentBean getStudent() {
@@ -92,7 +101,6 @@ public class MyRestController {
 
         //traitement, mettre en base…
         student.setNote(student.getNote() + 1);
-        student.increment();
         //Retourner d'autres données
         return student;
     }
